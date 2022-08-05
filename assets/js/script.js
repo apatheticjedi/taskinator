@@ -62,7 +62,7 @@ var taskFormHandler = function (event) {
     }
 };
 
-var createTaskEl = function (taskDataObj) {
+var createTaskEl = function(taskDataObj) {
     // create list item
     var listItemEl = document.createElement("li");
     listItemEl.className = "task-item";
@@ -81,7 +81,6 @@ var createTaskEl = function (taskDataObj) {
 
     taskDataObj.id = taskIdCounter;
     tasks.push(taskDataObj);
-    saveTasks();
 
     var taskActionsEl = createTaskActions(taskIdCounter);
     listItemEl.appendChild(taskActionsEl);
@@ -89,6 +88,7 @@ var createTaskEl = function (taskDataObj) {
     // add entire list item to list
     tasksToDoEl.appendChild(listItemEl);
 
+    saveTasks();    
     // increase task counter for next unique id
     taskIdCounter++;
 };
